@@ -5,13 +5,13 @@ class User:
         self.email=email
         self.accounts=[]
         self.create_new_account()
-    def make_deposit(self,amount,account_index):
+    def make_deposit(self,amount,account_index=0):
         self.accounts[account_index].deposit(amount)
         return self
-    def make_withdrawl(self,amount,account_index):
+    def make_withdrawl(self,amount,account_index=0):
         self.accounts[account_index].withdraw(amount)
         return self
-    def display_user_balance(self,account_index,verbose=False):
+    def display_user_balance(self,account_index=0,verbose=False):
         self.accounts[account_index].display_account_info(verbose)
     def create_new_account(self, intial_deposit=0, int_rate=0.5, fee_rate=5):
         new_account=Bank_Account(intial_deposit,int_rate,fee_rate)
